@@ -28,7 +28,7 @@ class CongratulationsView extends ConsumerWidget {
               ),
               Gap.h24,
               DefaultButton(
-                title: "Login",
+                title: "Proceed",
                 callback: () {},
               ),
               Gap.h(
