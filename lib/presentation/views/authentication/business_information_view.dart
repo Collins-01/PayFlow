@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:payflow/extensions/extensions.dart';
 import 'package:payflow/presentation/shared_widgets/shared_widgets.dart';
+import 'package:payflow/router/router.dart';
 import 'package:payflow/utils/utils.dart';
 
 class BusinessInformationView extends ConsumerWidget {
@@ -50,7 +51,10 @@ class BusinessInformationView extends ConsumerWidget {
                 ),
                 DefaultButton(
                   title: "Next",
-                  callback: () {},
+                  callback: () {
+                    NavigationService.instance
+                        .navigateTo(RoutePaths.congratulationsView);
+                  },
                 ),
                 Gap.h(
                   context.deviceHeightPercentage(percentage: 10),

@@ -9,4 +9,7 @@ class RoutePaths {
   static const String addDefaultPickupAddressView =
       "/add_default_pickup_address_view";
   static const String baseView = "/base_view";
+  static const String businessVerificationView = "/business_verification_view";
+  static const String congratulationsView = "/congratulations_view";
+  static const String homeView = "/home_view";
 }

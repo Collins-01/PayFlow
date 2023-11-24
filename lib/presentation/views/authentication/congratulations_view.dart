@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:payflow/constants/app_assets.dart';
 import 'package:payflow/extensions/extensions.dart';
 import 'package:payflow/presentation/shared_widgets/shared_widgets.dart';
+import 'package:payflow/router/router.dart';
 import 'package:payflow/utils/utils.dart';
 
 class CongratulationsView extends ConsumerWidget {
@@ -29,7 +30,9 @@ class CongratulationsView extends ConsumerWidget {
               Gap.h24,
               DefaultButton(
                 title: "Proceed",
-                callback: () {},
+                callback: () {
+                  NavigationService.instance.navigateTo(RoutePaths.homeView);
+                },
               ),
               Gap.h(
                 context.deviceHeightPercentage(percentage: 10),

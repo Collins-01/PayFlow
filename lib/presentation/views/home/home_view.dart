@@ -14,6 +14,7 @@ class HomeView extends ConsumerStatefulWidget {
 }
 
 class _HomeViewState extends ConsumerState<HomeView> {
+  bool _isAmountVisible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,8 +34,8 @@ class _HomeViewState extends ConsumerState<HomeView> {
                       style: bodyStyle1,
                       children: [
                         TextSpan(
-                          text: ",Joseph Tahir!",
-                          style: bodyStyle2,
+                          text: ", Joseph Tahir!",
+                          style: bodyStyle1,
                         ),
                       ],
                     ),
@@ -83,19 +84,28 @@ class _HomeViewState extends ConsumerState<HomeView> {
                       "Account Balance",
                       color: AppColors.whiteColor,
                     ),
-                    Row(
-                      children: [
-                        AppText.body1(
-                          "₦139,569.00",
-                          color: AppColors.whiteColor,
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _isAmountVisible = !_isAmountVisible;
+                        });
+                      },
+                      child: SizedBox(
+                        child: Row(
+                          children: [
+                            AppText.body1(
+                              _isAmountVisible ? "N139,569.00" : "*********",
+                              color: AppColors.whiteColor,
+                            ),
+                            Gap.w4,
+                            Icon(
+                              Icons.visibility_outlined,
+                              size: 15,
+                              color: AppColors.whiteColor,
+                            )
+                          ],
                         ),
-                        Gap.w4,
-                        Icon(
-                          Icons.visibility,
-                          size: 14,
-                          color: AppColors.whiteColor,
-                        )
-                      ],
+                      ),
                     ),
                   ],
                 ),

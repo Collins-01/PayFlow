@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:payflow/extensions/extensions.dart';
 import 'package:payflow/presentation/shared_widgets/shared_widgets.dart';
+import 'package:payflow/router/router.dart';
 import 'package:payflow/utils/utils.dart';
 
 class RegisterView extends ConsumerWidget {
@@ -101,7 +102,10 @@ class RegisterView extends ConsumerWidget {
                 Gap.h24,
                 DefaultButton(
                   title: "Next",
-                  callback: () {},
+                  callback: () {
+                    NavigationService.instance
+                        .navigateTo(RoutePaths.businessVerificationView);
+                  },
                 ),
                 Gap.h10,
                 Gap.h(

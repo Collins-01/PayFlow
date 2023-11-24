@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:payflow/extensions/context_extension.dart';
 import 'package:payflow/presentation/shared_widgets/shared_widgets.dart';
+import 'package:payflow/router/router.dart';
 import 'package:payflow/utils/utils.dart';
 
 class OnboardingView extends ConsumerStatefulWidget {
@@ -80,9 +81,28 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
               const Gap.h(30),
               DefaultButton(
                 title: "Get Started",
-                callback: () {},
+                callback: () {
+                  NavigationService.instance
+                      .navigateToReplace(RoutePaths.registerView);
+                },
               ),
-              Gap.h(context.deviceHeightPercentage(percentage: 7)),
+              Gap.h20,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AppText.body1("Have an account already?"),
+                  TextButton(
+                    onPressed: () => NavigationService.instance
+                        .navigateTo(RoutePaths.loginView),
+                    child: AppText.body1(
+                      "Login",
+                      color: AppColors.blueColor,
+                    ),
+                  )
+                ],
+              ),
+              // Gap.h(context.deviceHeightPercentage(percentage: 3)),
+              Gap.h20,
             ],
           ),
         )),
