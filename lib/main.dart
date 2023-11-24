@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:payflow/presentation/views/authentication/congratulations_view.dart';
+import 'package:payflow/presentation/views/home/home_view.dart';
 
 import 'package:payflow/router/router.dart';
 
@@ -27,7 +28,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CongratulationsView(),
+      home: HomeView(),
       navigatorKey: NavigationService.instance.navigatorKey,
       onGenerateRoute: AppRouter.generateRoute,
     );
