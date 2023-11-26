@@ -6,7 +6,8 @@ import 'package:payflow/presentation/views/splash_screen_view.dart';
 
 import 'package:payflow/router/router.dart';
 
-const IS_DEBUG = true;
+// ignore: constant_identifier_names
+const IS_DEBUG = false;
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   if (IS_DEBUG) {
